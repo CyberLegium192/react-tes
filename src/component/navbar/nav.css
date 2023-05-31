@@ -1,0 +1,31 @@
+.linknav{
+  transform: translateX(-100%);
+}
+.linknav.active{
+  transform: translateX(0%);
+}
+.backmenu.active{
+  display: block;
+}
+.backmenu{
+  display: none;
+  transition: display 0.3s;
+}
+.downtheater{
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.downtheater.active{
+  height: 170px;
+  padding: 8px;
+}
+.anyDown{
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.anyDown.active{
+  height: 70px;
+  padding: 8px;
+}
