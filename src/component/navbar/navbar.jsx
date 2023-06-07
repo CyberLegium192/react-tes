@@ -1,5 +1,6 @@
 import { React, useRef } from "react";
 import ReactDOM from "react-dom";
+import { Link } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 import './nav.css'
 import { BiMenu } from 'react-icons/bi';
@@ -27,11 +28,13 @@ const Navbar = () => {
         <div className='font-poppins cursor-pointer'>
           <a href='' className='text-xs spacing'>Login|Register</a>
         </div>
-        <h5 className='absolute font-bold text-lg translate-x-52'>JKT48</h5>
+        <Link to='/' className='absolute translate-x-52'><h5 className='font-bold text-lg'>JKT48</h5>
+        </Link>
       </nav>
       
-      <div className='h-full bg-black opacity-40 w-full top-0 fixed backmenu' ref={backmenu}></div>
-        <div className='fixed text-white top-0 left-0 w-72 h-screen bg-white transition-transform duration-500 linknav' ref={menu}>
+      <div className='h-full bg-black opacity-40 w-full top-0 fixed backmenu
+      z-50' ref={backmenu}></div>
+        <div className='fixed text-white top-0 left-0 w-72 h-screen bg-white transition-transform duration-500 linknav z-50' ref={menu}>
           
           <div className='flex justify-end mb-3 bg-red-600 h-12 px-2'>
             <button className='text-white text-2xl cursor-pointer'
@@ -41,13 +44,13 @@ const Navbar = () => {
           text-sm'>
             <ul>
               <li className='mb-3'>
-                <a href=''>NEWS</a>
+                <Link to='News/jkt48'>NEWS</Link>
               </li>
               <li className='mb-3'>
-                <a href=''>schedule</a>
+                <Link to='schedule/jkt48'>schedule</Link>
               </li>
               <li className='mb-3'>
-                <a href=''>member</a>
+                <Link to='member'>member</Link>
               </li>
               <li className='mb-2'>
                 <DropDown />

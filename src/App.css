@@ -5,3 +5,12 @@ body{
   box-sizing: border-box;
   overflow-x: hidden;
 }
+.image-member{
+  width: 99%;
+}
+.status-birthday{
+  font-size: .6rem;
+}
+.boxMiniNews{
+  border: 1px solid red;
+}

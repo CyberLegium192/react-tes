@@ -2,17 +2,22 @@ import React, {useState, useEffect} from 'react'
 
 const NewsData = () =>{
   const [newsData, setDataNews] = useState([])
+  const [CurrentPage, setCurrentPage] = useState(1);
+  const [PostPerPage, setPostPerPage] = useState(4);
   const getData = () => {
     fetch('https://64778b0e9233e82dd53bd43f.mockapi.io/news')
     .then(resp => resp.json())
     .then(data => {setDataNews(data)});
   }
+  const lastPostIndex = CurrentPage * PostPerPage;
+  const firstPostIndex = lastPostIndex - PostPerPage;
+  const currentPost = newsData.slice(firstPostIndex, lastPostIndex);
   useEffect(() => {
     getData();
   }, []); 
   return(
     <>
-    {newsData.map((berita) => <NewsBox tema={berita.tema}
+    {currentPost.map((berita) => <NewsBox tema={berita.tema}
     tanggal={berita.tanggal} pengumuman={berita.pengumuman}/> )}
     </>  
   )

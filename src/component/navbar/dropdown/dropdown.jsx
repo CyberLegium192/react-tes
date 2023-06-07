@@ -1,5 +1,6 @@
 import { React, useRef } from "react";
 import { IoIosArrowDown } from 'react-icons/io';
+import {Link} from 'react-router-dom'
 const DropDown = () => {
   
   // THEATER DROPDOWN
@@ -12,16 +13,16 @@ const DropDown = () => {
     return(
       <>
         <div className='border-b-2 relative border-b-gray-500 flex pb-2 items-center'>
-          <a href='' onClick={ClickDown} className='flex justify-between w-full'>Theater<IoIosArrowDown
-          className='text-lg' /></a>
+          <Link to='' onClick={ClickDown} className='flex justify-between w-full'>Theater<IoIosArrowDown
+          className='text-lg' /></Link>
         </div>
         <div className='text-xs downtheater font-normal capitalize mb-4' ref={theaterDown}>
-          <a className='block mb-3' href=''>apa itu theater?</a>
-          <a className='block mb-3' href=''>apa itu theater?</a>
-          <a className='block mb-3' href=''>apa itu theater?</a>
-          <a className='block mb-3' href=''>apa itu theater?</a>
-          <a className='block mb-3' href=''>apa itu theater?</a>
-          <a className='block mb-3' href=''>apa itu theater?</a>
+          <Link className='block mb-3' to='/theater'>apa itu theater?</Link>
+          <Link className='block mb-3' to='/theater'>apa itu theater?</Link>
+          <Link className='block mb-3' to='/theater'>apa itu theater?</Link>
+          <Link className='block mb-3' to='/theater'>apa itu theater?</Link>
+          <Link className='block mb-3' to='/theater'>apa itu theater?</Link>
+          <Link className='block mb-3' to='/theater'>apa itu theater?</Link>
         </div>
       </>  
     )
